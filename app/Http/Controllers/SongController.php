@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class SongController extends Controller
 {
-    protected $songs = ['Living on a prayer', 'Nothing else matters', 'Thunderstruck', 'Back in black', 'Ace of spades'];
+    protected $songs = ['Living on a prayer', 'Nothing else matters', 'Thunderstruck', 'paint it black', 'Ace of spades'];
 
     public function index()
     {
@@ -31,5 +31,14 @@ class SongController extends Controller
     {
         $song = $this->songs[$index] ?? 'Song not found';
         return view('songs.edit', ['song' => $song, 'index' => $index]);
+    }
+    public function store()
+    {
+    }
+    public function update()
+    {
+    }
+    public function destroy()
+    {
     }
 }
