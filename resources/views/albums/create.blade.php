@@ -21,22 +21,22 @@
         </div>
         @endif
 
-        <form method="POST" action="{{ route('albums.store') }}">
+        <form method="POST" action="{{ route('albums.store') }}" class="space-y-4">
             @csrf
 
-            <div class="mb-4">
+            <div class="flex flex-col mb-4">
                 <label for="name" class="block text-lg font-medium">Name:</label>
                 <input type="text" id="name" name="name" maxlength="255" required
                     class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
             </div>
 
-            <div class="mb-4">
+            <div class="flex flex-col mb-4">
                 <label for="year" class="block text-lg font-medium">Year:</label>
                 <input type="text" id="year" name="year" maxlength="255" required
                     class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
             </div>
 
-            <div class="mb-4">
+            <div class="flex flex-col mb-4">
                 <label for="times_sold" class="block text-lg font-medium">Times Sold:</label>
                 <input type="number" id="times_sold" name="times_sold" required
                     class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">

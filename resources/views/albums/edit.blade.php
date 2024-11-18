@@ -25,22 +25,26 @@
             @csrf
             @method('PUT')
             
-            <div class="mb-4">
-                <label for="name" class="block text-lg font-medium">Name:</label>
-                <input type="text" id="name" name="name" value="{{ old('name', $album->name) }}" required maxlength="100" 
-                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+            <div class="flex flex-wrap gap-6 mb-4">
+                <div class="flex-1 min-w-[300px]">
+                    <label for="name" class="block text-lg font-medium">Name:</label>
+                    <input type="text" id="name" name="name" value="{{ old('name', $album->name) }}" required maxlength="100" 
+                        class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                </div>
+
+                <div class="flex-1 min-w-[300px]">
+                    <label for="year" class="block text-lg font-medium">Year:</label>
+                    <input type="text" id="year" name="year" value="{{ old('year', $album->year) }}" 
+                        class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                </div>
             </div>
 
-            <div class="mb-4">
-                <label for="year" class="block text-lg font-medium">Year:</label>
-                <input type="text" id="year" name="year" value="{{ old('year', $album->year) }}" 
-                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
-            </div>
-
-            <div class="mb-4">
-                <label for="times_sold" class="block text-lg font-medium">Times Sold:</label>
-                <input type="text" id="times_sold" name="times_sold" value="{{ old('times_sold', $album->times_sold) }}" 
-                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+            <div class="flex flex-wrap gap-6 mb-4">
+                <div class="flex-1 min-w-[300px]">
+                    <label for="times_sold" class="block text-lg font-medium">Times Sold:</label>
+                    <input type="text" id="times_sold" name="times_sold" value="{{ old('times_sold', $album->times_sold) }}" 
+                        class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                </div>
             </div>
 
             <button type="submit" 

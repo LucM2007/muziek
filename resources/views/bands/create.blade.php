@@ -1,4 +1,3 @@
-<!-- resources/views/bands/create.blade.php -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,30 +20,34 @@
         </div>
         @endif
 
-        <form action="{{ route('bands.store') }}" method="POST">
-            @csrf
-            <div class="mb-4">
-                <label for="name" class="block text-gray-700">Band Name</label>
-                <input type="text" id="name" name="name" class="w-full p-2 border border-gray-300 rounded" value="{{ old('name') }}" required>
+       <form action="{{ route('bands.store') }}" method="POST" class="space-y-6">
+           @csrf
+           <div class="flex flex-wrap gap-6">
+               <div class="flex-1 min-w-[300px]">
+                   <label for="name" class="block text-lg font-medium text-gray-700">Band Name</label>
+                   <input type="text" id="name" name="name" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" value="{{ old('name') }}" required>
+               </div>
+
+               <div class="flex-1 min-w-[300px]">
+                   <label for="genre" class="block text-lg font-medium text-gray-700">Genre</label>
+                    <input type="text" id="genre" name="genre" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" value="{{ old('genre') }}" required>
+                </div>
             </div>
 
-            <div class="mb-4">
-                <label for="genre" class="block text-gray-700">Genre</label>
-                <input type="text" id="genre" name="genre" class="w-full p-2 border border-gray-300 rounded" value="{{ old('genre') }}" required>
-            </div>
+            <div class="flex flex-wrap gap-6">
+                <div class="flex-1 min-w-[300px]">
+                    <label for="founded" class="block text-lg font-medium text-gray-700">Founded Year</label>
+                    <input type="number" id="founded" name="founded" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" value="{{ old('founded') }}" required>
+                </div>
 
-            <div class="mb-4">
-                <label for="founded" class="block text-gray-700">Founded Year</label>
-                <input type="number" id="founded" name="founded" class="w-full p-2 border border-gray-300 rounded" value="{{ old('founded') }}" required>
-            </div>
-
-            <div class="mb-6">
-                <label for="active_until" class="block text-gray-700">Active Until</label>
-                <input type="text" id="active_until" name="active_until" class="w-full p-2 border border-gray-300 rounded" value="{{ old('active_until') }}" placeholder="Enter a year or 'heden'">
+                <div class="flex-1 min-w-[300px]">
+                    <label for="active_until" class="block text-lg font-medium text-gray-700">Active Until</label>
+                    <input type="text" id="active_until" name="active_until" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" value="{{ old('active_until') }}" placeholder="Enter a year or 'heden'">
+                </div>
             </div>
 
             <div class="text-center">
-                <button type="submit" class="bg-blue-500 text-white px-6 py-3 rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">Create Band</button>
+                <button type="submit" class="mt-4 bg-blue-500 text-white px-6 py-3 rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">Create Band</button>
             </div>
         </form>
 

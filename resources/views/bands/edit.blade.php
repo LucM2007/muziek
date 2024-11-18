@@ -25,28 +25,32 @@
         @csrf
         @method('PUT')
 
-        <div>
-            <label for="name" class="block text-lg font-medium text-gray-700">Band Name</label>
-            <input type="text" id="name" name="name" value="{{ old('name', $band->name) }}" required maxlength="100" 
-                   class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+        <div class="flex flex-wrap gap-6">
+            <div class="flex-1 min-w-[300px]">
+                <label for="name" class="block text-lg font-medium text-gray-700">Band Name</label>
+                <input type="text" id="name" name="name" value="{{ old('name', $band->name) }}" required maxlength="100" 
+                       class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+
+            <div class="flex-1 min-w-[300px]">
+                <label for="genre" class="block text-lg font-medium text-gray-700">Genre</label>
+                <input type="text" id="genre" name="genre" value="{{ old('genre', $band->genre) }}" 
+                       class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
         </div>
 
-        <div>
-            <label for="genre" class="block text-lg font-medium text-gray-700">Genre</label>
-            <input type="text" id="genre" name="genre" value="{{ old('genre', $band->genre) }}" 
-                   class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
-        </div>
+        <div class="flex flex-wrap gap-6">
+            <div class="flex-1 min-w-[300px]">
+                <label for="founded" class="block text-lg font-medium text-gray-700">Founded Year</label>
+                <input type="text" id="founded" name="founded" value="{{ old('founded', $band->founded) }}" 
+                       class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
 
-        <div>
-            <label for="founded" class="block text-lg font-medium text-gray-700">Founded Year</label>
-            <input type="text" id="founded" name="founded" value="{{ old('founded', $band->founded) }}" 
-                   class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
-        </div>
-
-        <div>
-            <label for="active_until" class="block text-lg font-medium text-gray-700">Active Until</label>
-            <input type="text" id="active_until" name="active_until" value="{{ old('active_until', $band->active_until) }}" 
-                   class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <div class="flex-1 min-w-[300px]">
+                <label for="active_until" class="block text-lg font-medium text-gray-700">Active Until</label>
+                <input type="text" id="active_until" name="active_until" value="{{ old('active_until', $band->active_until) }}" 
+                       class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
         </div>
 
         <div class="text-center">
