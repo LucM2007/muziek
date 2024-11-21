@@ -14,5 +14,16 @@ class Albums extends Model
     public $timestamps = false;
 
     protected $fillable = ['name', 'year', 'times_sold'];
+    
+    public function songs()
+    {
+        return $this->belongsToMany(Song::class, 'album_song', 'album_id', 'song_id');
+    }
+    
 
+    public function albums()
+    {
+        return $this->belongsTo(Albums::class, 'album_song', 'song_id', 'album_id');
+    }
+    
 }

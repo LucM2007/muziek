@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('bands', function (Blueprint $table) {
-                $table->integer('id')->autoIncrement()->primary();
+                $table->id();
                 $table->string('name')->notNull();
                 $table->string('genre')->notNull();
                 $table->integer('founded')->notNull()->limit(4);

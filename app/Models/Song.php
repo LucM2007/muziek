@@ -13,4 +13,8 @@ class Song extends Model
     protected $keytype = 'int'; //mag weg
     public $timestamps = true; //mag weg
     protected $fillable = ['title', 'singer'];
+    public function albums()
+    {
+        return $this->belongsToMany(Albums::class, 'album_song');
+    }
 }
